@@ -1,0 +1,127 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(cuid())
+  email       String?  @unique
+  name        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // 관계
+  tasteProfiles       TasteProfile[]
+  tasteTestResults    TasteTestResult[]
+  mukjjangTestResults MukjjangTestResult[]
+  reviews             Review[]
+  recommendations     Recommendation[]
+
+  @@map("users")
+}
+
+model TasteProfile {
+  id              String    @id @default(cuid())
+  userId          String?
+  traits          Json      // TraitCategory별 점수
+  personalityGroup String   // PersonalityGroup enum 값
+  createdAt       DateTime  @default(now())
+
+  // 관계
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  testResult TasteTestResult?
+
+  @@map("taste_profiles")
+}
+
+model TasteTestResult {
+  id             String   @id @default(cuid())
+  userId         String?
+  tasteProfileId String   @unique
+  responses      Json     // 테스트 응답 데이터
+  completedAt    DateTime @default(now())
+
+  // 관계  
+  user         User?        @relation(fields: [userId], references: [id], onDelete: SetNull)
+  tasteProfile TasteProfile @relation(fields: [tasteProfileId], references: [id], onDelete: Cascade)
+
+  @@map("taste_test_results")
+}
+
+model MukjjangTestResult {
+  id               String   @id @default(cuid())
+  userId           String?
+  score            Int
+  totalQuestions   Int
+  correctAnswers   Int
+  avgResponseTime  Float    // milliseconds
+  level            String   // MukjjangLevel enum 값
+  shareCardData    Json     // ShareCard 데이터
+  completedAt      DateTime @default(now())
+
+  // 관계
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@map("mukjjang_test_results")
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  brand       String?
+  category    String
+  imageUrl    String?
+  description String?
+  tags        String[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // 관계
+  reviews        Review[]
+  recommendations Recommendation[]
+
+  @@map("products")
+}
+
+model Recommendation {
+  id           String   @id @default(cuid())
+  userId       String?
+  productId    String
+  matchScore   Float    // 0.0 - 1.0
+  reason       String
+  isPersonalized Boolean @default(true)
+  createdAt    DateTime @default(now())
+
+  // 관계
+  user    User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("recommendations")
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String?
+  productId String
+  rating    Int      // 1-5 stars
+  content   String?
+  isVerified Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 관계
+  user    User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("reviews")
+}
