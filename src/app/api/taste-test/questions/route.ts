@@ -17,8 +17,7 @@ const sampleQuestions: TasteTestQuestion[] = [
         id: '1b', 
         text: '진한 아메리카노',
         traits: [
-          { category: TraitCategory.BITTER, weight: 3 },
-          { category: TraitCategory.SIMPLE_PALATE, weight: 2 }
+          { category: TraitCategory.BITTER, weight: 3 }
         ]
       },
       {
