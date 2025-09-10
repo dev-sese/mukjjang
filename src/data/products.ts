@@ -7,7 +7,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '신라면',
     brand: '농심',
     category: ProductCategory.RAMEN,
-    imageUrl: '/images/products/shin-ramyun.jpg',
+    imageUrl: '/images/products/test-image.JPG',
     description: '매콤한 국물이 일품인 대한민국 대표 라면',
     tasteProfile: {
       id: 'shin-ramyun-profile',
@@ -27,6 +27,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '진라면 매운맛',
     brand: '오뚜기',
     category: ProductCategory.RAMEN,
+    imageUrl: '/images/products/test-image.JPG',
     description: '깔끔하고 시원한 매운맛이 특징',
     tasteProfile: {
       id: 'jin-ramyun-profile',
@@ -46,6 +47,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '안성탕면',
     brand: '농심',
     category: ProductCategory.RAMEN,
+    imageUrl: '/images/products/test-image.JPG',
     description: '구수한 사골 국물맛',
     tasteProfile: {
       id: 'ansungtangmyun-profile',
@@ -67,6 +69,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '허니버터칩',
     brand: '해태제과',
     category: ProductCategory.CHIP,
+    imageUrl: '/images/products/test-image.JPG',
     description: '달콤한 꿀과 버터의 만남',
     tasteProfile: {
       id: 'honey-butter-chip-profile',
@@ -86,6 +89,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '꼬북칩 초콜릿맛',
     brand: '오리온',
     category: ProductCategory.CHIP,
+    imageUrl: '/images/products/test-image.JPG',
     description: '4겹의 바삭함과 진한 초콜릿',
     tasteProfile: {
       id: 'turtle-chip-profile',
@@ -105,6 +109,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '뿌셔뿌셔',
     brand: '오뚜기',
     category: ProductCategory.SNACK,
+    imageUrl: '/images/products/test-image.JPG',
     description: '라면을 그대로 부순 과자의 원조',
     tasteProfile: {
       id: 'ppushu-ppushu-profile',
@@ -126,6 +131,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '밀키스',
     brand: '롯데칠성',
     category: ProductCategory.BEVERAGE,
+    imageUrl: '/images/products/test-image.JPG',
     description: '우유와 탄산의 부드러운 만남',
     tasteProfile: {
       id: 'milkis-profile',
@@ -145,6 +151,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '칠성사이다',
     brand: '롯데칠성',
     category: ProductCategory.BEVERAGE,
+    imageUrl: '/images/products/test-image.JPG',
     description: '시원하고 상쾌한 탄산음료',
     tasteProfile: {
       id: 'cider-profile',
@@ -164,6 +171,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '바나나맛우유',
     brand: '빙그레',
     category: ProductCategory.BEVERAGE,
+    imageUrl: '/images/products/test-image.JPG',
     description: '달콤한 바나나향의 국민 음료',
     tasteProfile: {
       id: 'banana-milk-profile',
@@ -185,6 +193,7 @@ export const SAMPLE_PRODUCTS: Product[] = [
     name: '초코파이',
     brand: '오리온',
     category: ProductCategory.COOKIE,
+    imageUrl: '/images/products/test-image.JPG',
     description: '부드러운 마시멜로와 진한 초콜릿',
     tasteProfile: {
       id: 'choco-pie-profile',
