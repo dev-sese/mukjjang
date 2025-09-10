@@ -90,8 +90,9 @@ export default function ProductFilterComponent({ onFilterChange, currentFilter }
   );
 
   return (
-    <div className="bg-white border-b border-gray-200 p-4">
-      <div className="flex items-center justify-between mb-4">
+    <div className="bg-white border-b border-gray-200">
+      <div className="max-w-6xl mx-auto p-4">
+        <div className="flex items-center justify-between mb-4">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
@@ -209,6 +210,7 @@ export default function ProductFilterComponent({ onFilterChange, currentFilter }
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
