@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, use } from 'react';
 import { useRouter } from 'next/navigation';
 import { Star, ArrowLeft, Plus } from 'lucide-react';
 import { ProductService } from '@/lib/product-service';
@@ -8,17 +8,18 @@ import { PersonalityGroup } from '@/types/product';
 import ReviewForm from '@/components/product/ReviewForm';
 
 interface ProductDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const router = useRouter();
   const [showReviewForm, setShowReviewForm] = useState(false);
   
-  const productWithReviews = ProductService.getProductWithReviews(params.id);
-  const similarProducts = ProductService.getSimilarProducts(params.id, 3);
+  const resolvedParams = use(params);
+  const productWithReviews = ProductService.getProductWithReviews(resolvedParams.id);
+  const similarProducts = ProductService.getSimilarProducts(resolvedParams.id, 3);
 
   const handleReviewSubmit = async (reviewData: {
     rating: number;
@@ -320,7 +321,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
       {/* 리뷰 작성 폼 모달 */}
       {showReviewForm && (
         <ReviewForm
-          productId={params.id}
+          productId={resolvedParams.id}
           productName={product.name}
           onClose={() => setShowReviewForm(false)}
           onSubmit={handleReviewSubmit}
