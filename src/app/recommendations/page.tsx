@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Heart, TrendingUp, Users, Sparkles } from 'lucide-react';
 import { ProductService } from '@/lib/product-service';
-import { PersonalityGroup } from '@/types/product';
+import { PersonalityGroup, Product } from '@/types/product';
 import { TasteProfile } from '@/types/taste-test';
 import ProductCard from '@/components/product/ProductCard';
 
@@ -57,7 +57,7 @@ export default function RecommendationsPage() {
     const allRecommended = ProductService.getRecommendedProducts(personalityGroup);
     
     // 카테고리별로 그룹화
-    const byCategory: Record<string, any[]> = {};
+    const byCategory: Record<string, Product[]> = {};
     allRecommended.forEach(product => {
       if (!byCategory[product.category]) {
         byCategory[product.category] = [];

@@ -1,4 +1,4 @@
-import { Product, ProductCategory, ProductWithReviews, ProductFilter, PersonalityGroup } from '@/types/product';
+import { Product, ProductCategory, ProductWithReviews, ProductFilter, PersonalityGroup, ProductTasteProfile } from '@/types/product';
 import { SAMPLE_PRODUCTS, PERSONALITY_PRODUCT_MAPPING } from '@/data/products';
 import { SAMPLE_REVIEWS, getReviewsByProductId, calculateAverageRating } from '@/data/reviews';
 
@@ -127,12 +127,12 @@ export class ProductService {
   }
 
   // 맛 프로파일 유사도 계산 (0-1 범위)
-  private static calculateTasteSimilarity(profile1: any, profile2: any): number {
+  private static calculateTasteSimilarity(profile1: ProductTasteProfile, profile2: ProductTasteProfile): number {
     const factors = ['saltiness', 'sweetness', 'spiciness', 'richness', 'freshness'];
     let totalDifference = 0;
 
     factors.forEach(factor => {
-      const diff = Math.abs(profile1[factor] - profile2[factor]);
+      const diff = Math.abs((profile1 as any)[factor] - (profile2 as any)[factor]);
       totalDifference += diff;
     });
 
