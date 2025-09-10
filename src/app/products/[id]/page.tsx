@@ -50,7 +50,9 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
     );
   }
 
-  const { product, reviews, averageRating, reviewCount } = productWithReviews;
+  // ProductWithReviews extends Product이므로 product는 productWithReviews 자체입니다
+  const product = productWithReviews;
+  const { reviews, averageRating, reviewCount } = productWithReviews;
 
   const getCategoryLabel = (category: string) => {
     const labels: Record<string, string> = {
