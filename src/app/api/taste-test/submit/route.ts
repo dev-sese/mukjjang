@@ -58,31 +58,22 @@ function analyzeResponses(responses: TestResponse[]): TasteProfile {
   });
 
   // 2. 정규화 (0~1 사이)
-  const normalizedTraits: Record<TraitCategory, number> = {
-    [TraitCategory.SWEET]: 0,
-    [TraitCategory.SALTY]: 0,
-    [TraitCategory.SPICY]: 0,
-    [TraitCategory.EXOTIC]: 0,
-    [TraitCategory.POWER]: 0,
+  // 각 trait별 최대 점수 정의
+  const maxScores: Record<TraitCategory, number> = {
+    [TraitCategory.SWEET]: 4,
+    [TraitCategory.SALTY]: 6,
+    [TraitCategory.SPICY]: 6,
+    [TraitCategory.EXOTIC]: 5,
+    [TraitCategory.POWER]: 6,
   };
 
-  Object.keys(traitScores).forEach(category => {
-    const cat = category as TraitCategory;
-    // 각 질문에서 최대 점수를 선택한 경우의 총합 계산
-    let questionMaxSum = 0;
-    TASTE_TEST_QUESTIONS.forEach(question => {
-      let maxForQuestion = 0;
-      question.options.forEach(option => {
-        const traitForCategory = option.traits.find(t => t.category === cat);
-        if (traitForCategory) {
-          maxForQuestion = Math.max(maxForQuestion, traitForCategory.weight);
-        }
-      });
-      questionMaxSum += maxForQuestion;
-    });
-
-    normalizedTraits[cat] = questionMaxSum > 0 ? traitScores[cat] / questionMaxSum : 0;
-  });
+  const normalizedTraits: Record<TraitCategory, number> = {
+    [TraitCategory.SWEET]: traitScores[TraitCategory.SWEET] / maxScores[TraitCategory.SWEET],
+    [TraitCategory.SALTY]: traitScores[TraitCategory.SALTY] / maxScores[TraitCategory.SALTY],
+    [TraitCategory.SPICY]: traitScores[TraitCategory.SPICY] / maxScores[TraitCategory.SPICY],
+    [TraitCategory.EXOTIC]: traitScores[TraitCategory.EXOTIC] / maxScores[TraitCategory.EXOTIC],
+    [TraitCategory.POWER]: traitScores[TraitCategory.POWER] / maxScores[TraitCategory.POWER],
+  };
 
   // 3. 최종 성향 산출 (먹짱력 제외)
   const personalities = determinePersonalities(normalizedTraits);
