@@ -1,449 +1,278 @@
-import { TasteTestQuestion, TraitCategory } from '@/types/taste-test';
+import { TasteTestQuestion, TraitCategory } from "@/types/taste-test";
 
 export const TASTE_TEST_QUESTIONS: TasteTestQuestion[] = [
   {
-    id: '1',
-    scenario: '친구와 카페에 갔는데, 어떤 음료를 주문하시겠어요?',
+    id: "1",
+    scenario: "내가 좋아하는 피자 토핑은?",
     options: [
       {
-        id: '1a',
-        text: '달콤한 카라멜 마키아토',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 3 }
-        ]
+        id: "1a",
+        text: "콤비네이션",
+        traits: [{ category: TraitCategory.SALTY, weight: 1 }],
       },
       {
-        id: '1b', 
-        text: '진한 아메리카노',
-        traits: [
-          { category: TraitCategory.BITTER, weight: 3 }
-        ]
+        id: "1b",
+        text: "불고기",
+        traits: [{ category: TraitCategory.SWEET, weight: 1 }],
       },
       {
-        id: '1c',
-        text: '상큼한 레몬 에이드',
-        traits: [
-          { category: TraitCategory.SOUR, weight: 3 }
-        ]
-      }
-    ]
+        id: "1c",
+        text: "감자/고구마",
+        traits: [{ category: TraitCategory.SWEET, weight: 1 }],
+      },
+      {
+        id: "1d",
+        text: "치즈",
+        traits: [{ category: TraitCategory.SALTY, weight: 1 }],
+      },
+    ],
   },
   {
-    id: '2', 
-    scenario: '야식으로 뭔가 매운 걸 먹고 싶어요. 어떤 걸 선택하시겠어요?',
+    id: "2",
+    scenario: "야식을 먹는다면 내가 보통 먹는 야식은?",
     options: [
       {
-        id: '2a',
-        text: '불닭볶음면 (극매운맛)',
-        traits: [
-          { category: TraitCategory.SPICY, weight: 4 }
-        ]
+        id: "2a",
+        text: "치킨",
+        traits: [{ category: TraitCategory.SALTY, weight: 1 }],
       },
       {
-        id: '2b',
-        text: '떡볶이 (중간 매운맛)', 
+        id: "2b",
+        text: "닭발/마라/곱창",
         traits: [
-          { category: TraitCategory.SPICY, weight: 2 },
-          { category: TraitCategory.SWEET, weight: 1 }
-        ]
-      },
-      {
-        id: '2c',
-        text: '매운 게 부담스러워서 치킨',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 2 },
-          { category: TraitCategory.UMAMI, weight: 1 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '3',
-    scenario: '라면을 끓일 때 어떤 스타일을 선호하세요?',
-    options: [
-      {
-        id: '3a',
-        text: '국물 많이, 싱겁게',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 1 }
-        ]
-      },
-      {
-        id: '3b',
-        text: '국물 적게, 진하고 짭짤하게',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 4 },
-          { category: TraitCategory.UMAMI, weight: 2 }
-        ]
-      },
-      {
-        id: '3c',
-        text: '계란이나 치즈 추가해서 부드럽게',
-        traits: [
-          { category: TraitCategory.UMAMI, weight: 3 },
-          { category: TraitCategory.TEXTURE_SOFT, weight: 2 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '4',
-    scenario: '과자를 고를 때 가장 끌리는 것은?',
-    options: [
-      {
-        id: '4a',
-        text: '바삭바삭한 감자칩',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 3 },
-          { category: TraitCategory.TEXTURE_CRISPY, weight: 4 }
-        ]
-      },
-      {
-        id: '4b',
-        text: '부드러운 초콜릿 쿠키',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 4 },
-          { category: TraitCategory.TEXTURE_SOFT, weight: 3 }
-        ]
-      },
-      {
-        id: '4c',
-        text: '새콤달콤한 젤리',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 3 },
-          { category: TraitCategory.SOUR, weight: 2 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '5',
-    scenario: '치킨을 시킬 때 어떤 맛을 선택하시겠어요?',
-    options: [
-      {
-        id: '5a',
-        text: '후라이드 (기본맛)',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 2 },
-          { category: TraitCategory.UMAMI, weight: 2 }
-        ]
-      },
-      {
-        id: '5b',
-        text: '양념치킨 (달콤한 소스)',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 3 },
-          { category: TraitCategory.SPICY, weight: 1 }
-        ]
-      },
-      {
-        id: '5c',
-        text: '매운맛 치킨',
-        traits: [
-          { category: TraitCategory.SPICY, weight: 4 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '6',
-    scenario: '아침식사로 무엇을 선택하시겠어요?',
-    options: [
-      {
-        id: '6a',
-        text: '달콤한 팬케이크',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 4 },
-          { category: TraitCategory.TEXTURE_SOFT, weight: 2 }
-        ]
-      },
-      {
-        id: '6b',
-        text: '바삭한 토스트와 계란',
-        traits: [
-          { category: TraitCategory.TEXTURE_CRISPY, weight: 3 },
-          { category: TraitCategory.UMAMI, weight: 2 }
-        ]
-      },
-      {
-        id: '6c',
-        text: '시원한 요거트와 과일',
-        traits: [
-          { category: TraitCategory.SOUR, weight: 2 },
-          { category: TraitCategory.SWEET, weight: 1 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '7',
-    scenario: '피자 토핑으로 무엇을 선택하시겠어요?',
-    options: [
-      {
-        id: '7a',
-        text: '치즈만 듬뿍 (마르게리타)',
-        traits: [
-          { category: TraitCategory.UMAMI, weight: 3 },
-          { category: TraitCategory.SALTY, weight: 2 }
-        ]
-      },
-      {
-        id: '7b',
-        text: '페퍼로니와 살라미',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 4 },
-          { category: TraitCategory.UMAMI, weight: 3 }
-        ]
-      },
-      {
-        id: '7c',
-        text: '파인애플 하와이안',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 3 },
-          { category: TraitCategory.SOUR, weight: 2 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '8',
-    scenario: '아이스크림을 고를 때 어떤 맛을 선호하세요?',
-    options: [
-      {
-        id: '8a',
-        text: '진한 초콜릿',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 3 },
-          { category: TraitCategory.BITTER, weight: 1 }
-        ]
-      },
-      {
-        id: '8b',
-        text: '상큼한 레몬 셔벗',
-        traits: [
-          { category: TraitCategory.SOUR, weight: 4 }
-        ]
-      },
-      {
-        id: '8c',
-        text: '부드러운 바닐라',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 2 },
-          { category: TraitCategory.TEXTURE_SOFT, weight: 3 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '9',
-    scenario: '김치찌개를 먹을 때 어떤 스타일을 좋아하세요?',
-    options: [
-      {
-        id: '9a',
-        text: '신김치로 시큼하고 매콤하게',
-        traits: [
-          { category: TraitCategory.SOUR, weight: 3 },
-          { category: TraitCategory.SPICY, weight: 3 }
-        ]
-      },
-      {
-        id: '9b',
-        text: '돼지고기 넣어서 구수하게',
-        traits: [
-          { category: TraitCategory.UMAMI, weight: 4 },
-          { category: TraitCategory.SALTY, weight: 2 }
-        ]
-      },
-      {
-        id: '9c',
-        text: '두부 넣어서 부드럽게',
-        traits: [
-          { category: TraitCategory.TEXTURE_SOFT, weight: 3 },
-          { category: TraitCategory.UMAMI, weight: 2 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '10',
-    scenario: '샐러드 드레싱으로 무엇을 선택하시겠어요?',
-    options: [
-      {
-        id: '10a',
-        text: '상큼한 발사믹 식초',
-        traits: [
-          { category: TraitCategory.SOUR, weight: 4 }
-        ]
-      },
-      {
-        id: '10b',
-        text: '고소한 참깨 드레싱',
-        traits: [
-          { category: TraitCategory.UMAMI, weight: 3 },
-          { category: TraitCategory.SWEET, weight: 1 }
-        ]
-      },
-      {
-        id: '10c',
-        text: '크리미한 시저 드레싱',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 3 },
-          { category: TraitCategory.TEXTURE_SOFT, weight: 2 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '11',
-    scenario: '술안주로 무엇을 선택하시겠어요?',
-    options: [
-      {
-        id: '11a',
-        text: '짭짤한 육포나 오징어',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 4 },
-          { category: TraitCategory.UMAMI, weight: 2 }
-        ]
-      },
-      {
-        id: '11b',
-        text: '바삭한 견과류',
-        traits: [
-          { category: TraitCategory.TEXTURE_CRISPY, weight: 4 },
-          { category: TraitCategory.UMAMI, weight: 2 }
-        ]
-      },
-      {
-        id: '11c',
-        text: '달콤한 과일 안주',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 3 },
-          { category: TraitCategory.SOUR, weight: 1 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '12',
-    scenario: '국물 요리 중에 가장 좋아하는 것은?',
-    options: [
-      {
-        id: '12a',
-        text: '진한 사골 곰탕',
-        traits: [
-          { category: TraitCategory.UMAMI, weight: 4 },
-          { category: TraitCategory.SALTY, weight: 2 }
-        ]
-      },
-      {
-        id: '12b',
-        text: '시원한 냉면 육수',
-        traits: [
-          { category: TraitCategory.SOUR, weight: 2 },
-          { category: TraitCategory.SWEET, weight: 1 }
-        ]
-      },
-      {
-        id: '12c',
-        text: '얼큰한 해물탕',
-        traits: [
-          { category: TraitCategory.SPICY, weight: 3 },
-          { category: TraitCategory.UMAMI, weight: 3 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '13',
-    scenario: '디저트로 무엇을 선택하시겠어요?',
-    options: [
-      {
-        id: '13a',
-        text: '진한 티라미수',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 3 },
-          { category: TraitCategory.BITTER, weight: 2 },
-          { category: TraitCategory.TEXTURE_SOFT, weight: 3 }
-        ]
-      },
-      {
-        id: '13b',
-        text: '바삭한 마카롱',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 4 },
-          { category: TraitCategory.TEXTURE_CRISPY, weight: 3 }
-        ]
-      },
-      {
-        id: '13c',
-        text: '새콤한 레몬 타르트',
-        traits: [
-          { category: TraitCategory.SOUR, weight: 4 },
-          { category: TraitCategory.SWEET, weight: 2 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '14',
-    scenario: '한식 반찬 중에 가장 좋아하는 것은?',
-    options: [
-      {
-        id: '14a',
-        text: '아삭한 무생채',
-        traits: [
-          { category: TraitCategory.TEXTURE_CRISPY, weight: 3 },
-          { category: TraitCategory.SOUR, weight: 2 }
-        ]
-      },
-      {
-        id: '14b',
-        text: '부드러운 계란찜',
-        traits: [
-          { category: TraitCategory.TEXTURE_SOFT, weight: 4 },
-          { category: TraitCategory.UMAMI, weight: 2 }
-        ]
-      },
-      {
-        id: '14c',
-        text: '짭짤한 멸치볶음',
-        traits: [
-          { category: TraitCategory.SALTY, weight: 4 },
-          { category: TraitCategory.UMAMI, weight: 3 }
-        ]
-      }
-    ]
-  },
-  {
-    id: '15',
-    scenario: '마지막 질문! 새로운 음식을 시도할 때 어떤 기준으로 선택하세요?',
-    options: [
-      {
-        id: '15a',
-        text: '익숙하고 안전한 맛 위주',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 1 },
-          { category: TraitCategory.SALTY, weight: 1 }
-        ]
-      },
-      {
-        id: '15b',
-        text: '독특하고 자극적인 맛',
-        traits: [
-          { category: TraitCategory.SPICY, weight: 2 },
-          { category: TraitCategory.SOUR, weight: 2 },
-          { category: TraitCategory.BITTER, weight: 1 }
-        ]
-      },
-      {
-        id: '15c',
-        text: '균형 잡힌 다양한 맛',
-        traits: [
-          { category: TraitCategory.SWEET, weight: 1 },
+          { category: TraitCategory.SPICY, weight: 1 },
           { category: TraitCategory.SALTY, weight: 1 },
-          { category: TraitCategory.UMAMI, weight: 1 }
-        ]
-      }
-    ]
-  }
+        ],
+      },
+      {
+        id: "2c",
+        text: "피자/햄버거",
+        traits: [{ category: TraitCategory.SALTY, weight: 1 }],
+      },
+      {
+        id: "2d",
+        text: "회/ 초밥",
+        traits: [{ category: TraitCategory.SALTY, weight: 0 }],
+      },
+    ],
+  },
+  {
+    id: "3",
+    scenario: "내가 보통 사먹는 아이스크림은?",
+    options: [
+      {
+        id: "3a",
+        text: "초코맛",
+        traits: [{ category: TraitCategory.SWEET, weight: 1 }],
+      },
+      {
+        id: "3b",
+        text: "바닐라맛",
+        traits: [{ category: TraitCategory.SWEET, weight: 4 }],
+      },
+      {
+        id: "3c",
+        text: "샤베트/과일맛",
+        traits: [{ category: TraitCategory.SWEET, weight: 0 }],
+      },
+      {
+        id: "3d",
+        text: "팥/흑임자맛",
+        traits: [{ category: TraitCategory.SWEET, weight: 0 }],
+      },
+    ],
+  },
+  {
+    id: "4",
+    scenario: "샐러드나 샌드위치에 뿌릴 수 있는 소스를 딱 한개만 고른다면?",
+    options: [
+      {
+        id: "4a",
+        text: "스위트 어니언",
+        traits: [{ category: TraitCategory.SWEET, weight: 1 }],
+      },
+      {
+        id: "4b",
+        text: "바베큐",
+        traits: [{ category: TraitCategory.SALTY, weight: 1 }],
+      },
+      {
+        id: "4c",
+        text: "칠리",
+        traits: [{ category: TraitCategory.SPICY, weight: 1 }],
+      },
+      {
+        id: "4d",
+        text: "후추",
+        traits: [{ category: TraitCategory.SALTY, weight: 0 }],
+      },
+    ],
+  },
+  {
+    id: "5",
+    scenario: "마라탕 먹을 때 내가 주로 주문하는 단게는?",
+    options: [
+      {
+        id: "5a",
+        text: "아예 안맵게. 마라0, 맵기0",
+        traits: [{ category: TraitCategory.SALTY, weight: 0 }],
+      },
+      {
+        id: "5b",
+        text: "적당히 맵고 마라맛 있게. 마라 2, 맵기2",
+        traits: [
+          { category: TraitCategory.SALTY, weight: 1 },
+          { category: TraitCategory.SPICY, weight: 1 },
+          { category: TraitCategory.EXOTIC, weight: 1 },
+        ],
+      },
+      {
+        id: "5c",
+        text: "최고로 맵고 얼얼하게. 마라 max, 맵기 max",
+        traits: [
+          { category: TraitCategory.SALTY, weight: 2 },
+          { category: TraitCategory.SPICY, weight: 2 },
+          { category: TraitCategory.EXOTIC, weight: 2 },
+        ],
+      },
+      {
+        id: "5d",
+        text: "마라탕 무슨 맛으로 먹는건지 모르겠다",
+        traits: [{ category: TraitCategory.SALTY, weight: 0 }],
+      },
+    ],
+  },
+  {
+    id: "6",
+    scenario: "이국적인 음식 메뉴를 먹자고 했을 때 내가 가장 먹고 싶은 메뉴는?",
+    options: [
+      {
+        id: "6a",
+        text: "태국 똠양꿍",
+        traits: [{ category: TraitCategory.EXOTIC, weight: 2 }],
+      },
+      {
+        id: "6b",
+        text: "멕시코 타코",
+        traits: [{ category: TraitCategory.EXOTIC, weight: 1 }],
+      },
+      {
+        id: "6c",
+        text: "인도 커리",
+        traits: [{ category: TraitCategory.EXOTIC, weight: 1 }],
+      },
+      {
+        id: "6d",
+        text: "베트남 쌀국수",
+        traits: [{ category: TraitCategory.EXOTIC, weight: 0 }],
+      },
+    ],
+  },
+  {
+    id: "7",
+    scenario: "카페에서 음료를 주문할 때 내가 보통 마시는 음료는?",
+    options: [
+      {
+        id: "7a",
+        text: "아메리카노/라떼",
+        traits: [{ category: TraitCategory.SWEET, weight: 0 }],
+      },
+      {
+        id: "7b",
+        text: "바닐라 라떼/마키야또",
+        traits: [{ category: TraitCategory.SWEET, weight: 1 }],
+      },
+      {
+        id: "7c",
+        text: "고구마라떼/과일주스",
+        traits: [{ category: TraitCategory.SWEET, weight: 1 }],
+      },
+      {
+        id: "7d",
+        text: "말차라떼/홍차",
+        traits: [{ category: TraitCategory.SWEET, weight: 0 }],
+      },
+    ],
+  },
+  {
+    id: "8",
+    scenario: "내가 주로 먹는 라면 종류는?",
+    options: [
+      {
+        id: "8a",
+        text: "진라면/신라면 등 국물라면",
+        traits: [{ category: TraitCategory.SALTY, weight: 1 }],
+      },
+      {
+        id: "8b",
+        text: "불닭/틈새라면 등 매운라면",
+        traits: [
+          { category: TraitCategory.SALTY, weight: 1 },
+          { category: TraitCategory.SPICY, weight: 2 },
+        ],
+      },
+      {
+        id: "8c",
+        text: "사골곰탕/튀김우동 등 마일드라면",
+        traits: [{ category: TraitCategory.SALTY, weight: 0 }],
+      },
+      {
+        id: "8d",
+        text: "쌀국수/우육면 등 외국라면",
+        traits: [{ category: TraitCategory.EXOTIC, weight: 1 }],
+      },
+    ],
+  },
+  {
+    id: "9",
+    scenario: "SNS에서 맛있다고 난리난 맛조합을 발견했을 때 나는?",
+    options: [
+      {
+        id: "9a",
+        text: "당장 해먹어보거나 최대한 빨리 먹어본다",
+        traits: [{ category: TraitCategory.POWER, weight: 3 }],
+      },
+      {
+        id: "9b",
+        text: "저장했다가 언젠가는 먹어본다",
+        traits: [{ category: TraitCategory.POWER, weight: 2 }],
+      },
+      {
+        id: "9c",
+        text: "누가 해주면 먹어볼 의향은 있다",
+        traits: [{ category: TraitCategory.POWER, weight: 1 }],
+      },
+      {
+        id: "9d",
+        text: "크게 관심은 없다",
+        traits: [{ category: TraitCategory.POWER, weight: 0 }],
+      },
+    ],
+  },
+  {
+    id: "10",
+    scenario: "같이 밥먹을 일이 생겼을 때 내 포지션은?",
+    options: [
+      {
+        id: "10a",
+        text: "대충 근처 맛집 1~2개 알아본다",
+        traits: [{ category: TraitCategory.POWER, weight: 2 }],
+      },
+      {
+        id: "10b",
+        text: "뭐든 좋다",
+        traits: [{ category: TraitCategory.POWER, weight: 0 }],
+      },
+      {
+        id: "10c",
+        text: "찾진 않지만 결정권은 나에게 있다",
+        traits: [{ category: TraitCategory.POWER, weight: 1 }],
+      },
+      {
+        id: "10d",
+        text: "최대한 맛있는 집을 찾아 거기로 간다",
+        traits: [{ category: TraitCategory.POWER, weight: 3 }],
+      },
+    ],
+  },
 ];

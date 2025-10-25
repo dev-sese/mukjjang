@@ -16,32 +16,31 @@ export interface TasteTrait {
 }
 
 export enum TraitCategory {
-  SWEET = 'sweet',
-  SALTY = 'salty', 
-  SOUR = 'sour',
-  BITTER = 'bitter',
-  UMAMI = 'umami',
-  SPICY = 'spicy',
-  TEXTURE_SOFT = 'texture_soft',
-  TEXTURE_CRISPY = 'texture_crispy'
+  SWEET = "sweet",
+  SALTY = "salty",
+  SPICY = "spicy",
+  EXOTIC = "exotic",
+  POWER = "power",
 }
 
 export interface TasteProfile {
   userId?: string;
   traits: Record<TraitCategory, number>;
-  personalityGroup: PersonalityGroup;
+  normalizedTraits: Record<TraitCategory, number>;
+  personalities: PersonalityGroup[];
+  isMukjjangLeader: boolean;
   createdAt: Date;
 }
 
 export enum PersonalityGroup {
-  SWEET_LOVER = 'sweet_lover',
-  SPICY_ADVENTURER = 'spicy_adventurer', 
-  UMAMI_SEEKER = 'umami_seeker',
-  TEXTURE_EXPLORER = 'texture_explorer',
-  BALANCED_EATER = 'balanced_eater',
-  COMFORT_FOODIE = 'comfort_foodie',
-  BOLD_TASTER = 'bold_taster',
-  SIMPLE_PALATE = 'simple_palate'
+  SWEET_LOVER = "sweet_lover",
+  SALTY_MASTER = "salty_master",
+  SPICY_ADVENTURER = "spicy_adventurer",
+  EXOTIC_EXPLORER = "exotic_explorer",
+  MUKJJANG_LEADER = "mukjjang_leader",
+  SOFT_HEALER = "soft_healer",
+  INTENSE_TASTER = "intense_taster",
+  WORLD_FOODIE = "world_foodie",
 }
 
 export interface TestResponse {
