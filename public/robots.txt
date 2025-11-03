@@ -1,0 +1,17 @@
+# robots.txt for mukjjang.com
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://mukjjang.com/sitemap.xml
+
+# Allow Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Allow Google AdSense bot
+User-agent: Mediapartners-Google
+Allow: /
+
+# Crawl-delay (optional, for well-behaved bots)
+# Crawl-delay: 1
