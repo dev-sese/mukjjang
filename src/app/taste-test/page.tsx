@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import TestRenderer from '@/components/tests/TestRenderer';
-import { TasteTestQuestion } from '@/types/taste-test';
+import { useEffect, useState } from "react";
+import TestRenderer from "@/components/tests/TestRenderer";
+import { TasteTestQuestion } from "@/types/taste-test";
 
 const TasteTestPage = () => {
   const [questions, setQuestions] = useState<TasteTestQuestion[]>([]);
@@ -12,15 +12,15 @@ const TasteTestPage = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch('/api/taste-test/questions');
+        const response = await fetch("/api/taste-test/questions");
         if (response.ok) {
           const data = await response.json();
           setQuestions(data.data);
         } else {
-          setError('질문을 불러오는 데 실패했습니다.');
+          setError("질문을 불러오는 데 실패했습니다.");
         }
       } catch (err) {
-        setError('네트워크 오류가 발생했습니다.');
+        setError("네트워크 오류가 발생했습니다.");
       } finally {
         setLoading(false);
       }
@@ -45,7 +45,9 @@ const TasteTestPage = () => {
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-pink-50 flex items-center justify-center">
         <div className="text-center p-8">
           <div className="text-6xl mb-4">😅</div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">오류가 발생했어요</h2>
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">
+            오류가 발생했어요
+          </h2>
           <p className="text-gray-600 mb-4">{error}</p>
           <button
             onClick={() => window.location.reload()}
@@ -64,8 +66,9 @@ const TasteTestPage = () => {
         <TestRenderer
           questions={questions}
           testInfo={{
-            title: '나의 미각 성향 테스트',
-            description: '15개의 시나리오를 통해 당신만의 미각 성향을 발견하고 맞춤 음식을 추천받아보세요!'
+            title: "나의 미각 성향 테스트",
+            description:
+              "10개의 질문을 통해 7가지 미각 타입 중 당신의 타입을 찾아보세요!",
           }}
         />
       </div>
