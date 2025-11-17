@@ -21,7 +21,7 @@ export default function Footer() {
               맞춤형 식품을 추천해드립니다
             </p>
             <div className="text-sm text-gray-500 space-y-1">
-              <p>이메일: contact@mukjjang.com</p>
+              <p>이메일: mukjjang.dev@gmail.com</p>
               <p>
                 <a
                   href="https://x.com/mukjjang_power"
