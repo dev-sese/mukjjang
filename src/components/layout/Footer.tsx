@@ -20,8 +20,18 @@ export default function Footer() {
               <br />
               맞춤형 식품을 추천해드립니다
             </p>
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-gray-500 space-y-1">
               <p>이메일: contact@mukjjang.com</p>
+              <p>
+                <a
+                  href="https://x.com/mukjjang_power"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-600 transition"
+                >
+                  트위터: @mukjjang_power
+                </a>
+              </p>
             </div>
           </div>
 
@@ -73,7 +83,20 @@ export default function Footer() {
         {/* 하단 정보 */}
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <p>© {currentYear} 먹짱. All rights reserved.</p>
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+              <p>© {currentYear} 먹짱. All rights reserved.</p>
+              <a
+                href="https://x.com/mukjjang_power"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600 transition flex items-center gap-1"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                @mukjjang_power
+              </a>
+            </div>
             <div className="flex gap-6">
               <Link href="/privacy" className="hover:text-blue-600">
                 개인정보처리방침
