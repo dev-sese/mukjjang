@@ -30,7 +30,7 @@ export default function BlogPage() {
     {
       title: '제품 리뷰',
       description: '직접 먹어본 솔직한 제품 리뷰',
-      href: '/blog/reviews/breadenco-real-brownie-cookie',
+      href: '/blog/reviews',
       color: 'from-orange-500 to-red-600',
       icon: '⭐',
     },
